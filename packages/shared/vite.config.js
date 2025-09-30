@@ -11,7 +11,8 @@ export default defineConfig({
       fileName: () => 'index.js'
     },
     rollupOptions: {
-      external: ['solid-js', 'solid-js/web'],
+      // Don't externalize solid-js - bundle it
+      external: [],
       output: {
         preserveModules: false
       }
