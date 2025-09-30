@@ -1,0 +1,18 @@
+{
+  "name": "test-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter shared build && pnpm --filter web-loader build --filter react-native build --filter plugin build",
+    "build:shared": "pnpm --filter shared build",
+    "build:web": "pnpm --filter web-loader build",
+    "build:react-native": "pnpm --filter react-native build",
+    "build:plugin": "pnpm --filter plugin build",
+    "clean": "rm -rf packages/*/dist plugin/dist node_modules packages/*/node_modules plugin/node_modules",
+    "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

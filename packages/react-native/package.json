@@ -1,0 +1,19 @@
+{
+  "name": "@test/react-native",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/react-native.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@test/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

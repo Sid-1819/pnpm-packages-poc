@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Monorepo Test</title>
+  <style>
+    body { font-family: Arial; max-width: 800px; margin: 50px auto; padding: 20px; }
+    button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+    #app { margin-top: 20px; border: 2px dashed #ccc; padding: 20px; min-height: 200px; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Full Monorepo Test</h1>
+  
+  <div>
+    <button id="btn-web">Load Web SDK</button>
+    <button id="btn-mobile">Load Mobile SDK</button>
+    <button id="btn-clear">Clear</button>
+  </div>
+
+  <div id="app">
+    <p style="color: #999;">Click a button above...</p>
+  </div>
+
+  <script type="module">
+    import '../plugin/dist/plugin.js';
+
+    document.getElementById('btn-web').addEventListener('click', () => {
+      console.clear();
+      TestPlugin.init({ mode: 'web', userName: 'Web User' });
+    });
+
+    document.getElementById('btn-mobile').addEventListener('click', () => {
+      console.clear();
+      TestPlugin.init({ mode: 'mobile', userName: 'Mobile User' });
+    });
+
+    document.getElementById('btn-clear').addEventListener('click', () => {
+      document.getElementById('app').innerHTML = '<p style="color: #999;">Cleared</p>';
+    });
+
+    console.log('✅ Page ready! Click buttons to test.');
+  </script>
+</body>
+</html>
